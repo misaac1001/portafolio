@@ -78,13 +78,15 @@ body {
   height: auto; /* permite que la altura se ajuste automáticamente para mantener las proporciones */
 }
 
-.container-header {
+/* .container-header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-}
+} */
+
+
 
 label {
   margin: 0 20px 0 0;
@@ -129,6 +131,16 @@ label {
   top: 0;
   left: 0;
   background: rgba(60, 63, 114, 0.6);
+}
+.skype {
+  opacity: 1; 
+  transform: translateX(0px) translateY(0px) translateZ(0px) scaleX(1) scaleY(1); 
+  transition: opacity 1200ms ease-in-out 0s, transform 200ms ease-out 0s;
+}
+
+.skype:hover {
+  opacity: 0.5;
+  transform: translateX(10px) translateY(10px); 
 }
 
 .photo h4 {
@@ -237,7 +249,7 @@ label {
   box-shadow: -1px 6.5px 15px rgba(208, 211, 214, 0.75);
 }
 
-.skill {
+/* .skill {
   font-size: 30px;
   font-weight: 400;
   letter-spacing: 1.2px;
@@ -257,7 +269,7 @@ label {
   margin: 20px auto;
   border: 0;
   background: #e58859;
-}
+} */
 
 .ic {
   font-size: 35px;
@@ -324,10 +336,10 @@ label {
 ul li img {
   border-radius: 100%;
   padding: 10px;
-  max-width: 150px; /* Establece el ancho máximo */
-  max-height: 150px; /* Establece la altura máxima */
-  width: auto; /* Permite que la imagen ajuste su altura de manera proporcional al ancho máximo */
-  height: auto; /* Permite que la imagen ajuste su altura de manera proporcional al ancho máximo */
+ /* max-width: 150px;  Establece el ancho máximo */
+  /*max-height: 150px; /* Establece la altura máxima */
+  /*width: auto; /* Permite que la imagen ajuste su altura de manera proporcional al ancho máximo */
+  /*height: auto; /* Permite que la imagen ajuste su altura de manera proporcional al ancho máximo */
 }
 
 ul li h4 {
@@ -353,11 +365,10 @@ ul li p {
   left: 0;
   text-align: left;
   animation-name: slider;
-  animation-duration: 25s;
-  animation-timing-function: linear;
-  animation-delay: -10s;
-  animation-iteration-count: infinite;
-  /*animation-direction: alternate;*/
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-delay: -10s;
+    animation-iteration-count: infinite;
 }
 
 /*Portafolio*/
@@ -722,15 +733,24 @@ input {
   }
 }
 
-/* animación */
-
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+.element-to-animate {
+  animation: exampleAnimation 3s ease-in-out 1; 
 }
 
-.animate-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes exampleAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
+
+
+
